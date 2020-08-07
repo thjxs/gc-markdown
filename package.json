@@ -1,0 +1,40 @@
+{
+  "name": "gc-markdown",
+  "version": "0.1.0",
+  "description": "markdown component",
+  "main": "index.ts",
+  "author": "hong jian",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "format": "prettier src/* --single-quote --write",
+    "lint": "eslint src/*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-react": "^7.10.4",
+    "@types/react": "^16.9.43",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.0.5",
+    "react-dom": "^16.13.1",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^1.1.1",
+    "react": "^16.13.1",
+    "react-markdown": "^4.3.1"
+  }
+}
