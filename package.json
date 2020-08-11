@@ -8,6 +8,9 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "compile": "rm -rf lib && tsc",
