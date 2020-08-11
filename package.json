@@ -1,6 +1,6 @@
 {
   "name": "@thjxs/gc-markdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "markdown component",
   "main": "index.ts",
   "author": "hong jian",
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
+    "compile": "rm -rf lib && tsc",
     "format": "prettier src/* --single-quote --write",
     "lint": "eslint src/*"
   },
