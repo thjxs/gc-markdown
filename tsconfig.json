@@ -2,7 +2,6 @@
   "compilerOptions": {
     "declaration": true,
     "jsx": "react",
-    "outDir": "lib",
     "skipLibCheck": true,
     "target": "es6"
   },
