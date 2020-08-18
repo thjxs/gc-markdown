@@ -1,6 +1,6 @@
 {
   "name": "@thjxs/gc-markdown",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "markdown component",
   "main": "index.js",
   "author": "hong jian",
@@ -9,16 +9,18 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "compile": "rm -rf lib && tsc",
+    "compile": "gulp",
     "format": "prettier src/* --single-quote --write",
     "lint": "eslint src/*"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@types/react": "^16.9.43",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
@@ -31,9 +33,14 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "html-webpack-plugin": "^4.3.0",
+    "merge2": "^1.4.1",
     "prettier": "^2.0.5",
     "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",

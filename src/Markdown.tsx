@@ -60,7 +60,7 @@ function LinkRenderer(props: LinkRendererProps) {
   );
 }
 
-function CodeRenderer(props: {value: string}): JSX.Element {
+function CodeRenderer(props: { value: string }): JSX.Element {
   return <CodeBlock {...{ ...props, code: props.value, value: undefined }} />;
 }
 
@@ -92,7 +92,7 @@ const renderers = (canonicalURL: string) => ({
   },
 });
 
-function Markdown(props: MarkDownProps):JSX.Element {
+function Markdown(props: MarkDownProps): JSX.Element {
   React.useEffect(() => {
     let { hash } = location;
     hash = hash && hash.substring(1);
