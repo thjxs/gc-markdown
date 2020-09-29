@@ -2,8 +2,12 @@ import * as React from 'react';
 import Highlight, { Prism } from 'prism-react-renderer';
 import light from 'prism-react-renderer/themes/github';
 import dark from 'prism-react-renderer/themes/duotoneDark';
-import DarkModeContext from './DarkModeContext';
-import { CodeBlockProps, RawCodeBlockProps } from './interface';
+import ThemeContext from './ThemeContext';
+import { CodeBlockProps, RawCodeBlockProps, Theme } from './interface';
+
+function codeTheme(theme: Theme) {
+  return theme === 'light' ? light : dark;
+}
 
 function RawCodeBlock({
   code,
@@ -11,12 +15,16 @@ function RawCodeBlock({
   className: extraClassName,
   disablePrefixes,
 }: RawCodeBlockProps) {
-  const darkMode = React.useContext(DarkModeContext);
-  const theme = darkMode ? dark : light;
+  const theme = React.useContext(ThemeContext);
   const lang =
     language === 'shell' ? 'bash' : language === 'text' ? 'diff' : language;
   return (
-    <Highlight Prism={Prism} theme={theme} code={code} language={lang}>
+    <Highlight
+      Prism={Prism}
+      theme={codeTheme(theme)}
+      code={code}
+      language={lang}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={

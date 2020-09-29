@@ -1,3 +1,6 @@
+# img
+![img](jandan.svg)
+
 # h1
 ## h2
 ### h3
@@ -12,3 +15,7 @@
 let a = 12
 console.log(a)
 ```
+
+# inline code
+
+`React` `Vue` `choo` framework

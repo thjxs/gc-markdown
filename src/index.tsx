@@ -1,7 +1,7 @@
 import Markdown from './Markdown';
-import DarkModeContext from './DarkModeContext';
+import ThemeContext from './ThemeContext';
 export { MarkDownProps } from './interface';
 
-export { DarkModeContext };
+export { ThemeContext };
 
 export default Markdown;
