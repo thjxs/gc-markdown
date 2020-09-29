@@ -5,6 +5,9 @@
   "main": "lib/index.js",
   "author": "hong jian",
   "license": "MIT",
+  "keywords": [
+    "markdown", "react", "dark mode"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
