@@ -1,3 +1,5 @@
+export type Theme = 'light' | 'dark';
+
 export interface HeadingRendererProps {
   children: JSX.Element;
   level: number;
