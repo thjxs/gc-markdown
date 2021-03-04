@@ -9,10 +9,13 @@ import {
   MarkDownProps,
 } from './interface';
 
-function flatten(text: string, child: string | React.ReactElement) {
-  return typeof child === 'string'
-    ? text + child
-    : React.Children.toArray(child.props.children).reduce(flatten, text);
+function flatten(text: string, child: any): string {
+  switch (typeof child) {
+    case 'string':
+      return text + child;
+    default:
+      return React.Children.toArray(child.props.children).reduce(flatten, text);
+  }
 }
 
 function slugify(text: string) {
@@ -87,12 +90,12 @@ const renderers = (canonicalURL: string) => ({
   code: CodeRenderer,
   heading: HeadingRenderer,
   link: LinkRenderer,
-  image: function ImageRendererWrapper(props) {
+  image: function ImageRendererWrapper(props: { src: string }) {
     return <ImageRenderer {...props} canonicalURL={canonicalURL} />;
   },
 });
 
-function Markdown(props: MarkDownProps): JSX.Element {
+function Markdown(props: MarkDownProps): JSX.Element | string {
   React.useEffect(() => {
     let { hash } = location;
     hash = hash && hash.substring(1);
@@ -109,7 +112,7 @@ function Markdown(props: MarkDownProps): JSX.Element {
   }, []);
 
   if (!props.source) {
-    return null;
+    return '';
   }
 
   return (

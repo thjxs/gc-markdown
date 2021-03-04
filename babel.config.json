@@ -1,18 +1,10 @@
 {
   "presets": [
-    "@babel/preset-react",
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "browsers": [
-            "last 2 versions"
-          ]
-        }
-      }
-    ]
+    "@babel/env",
+    "@babel/typescript"
   ],
   "plugins": [
-    ["@babel/plugin-transform-typescript", {"isTSX": true}]
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
   ]
 }

@@ -16,14 +16,12 @@ function RawCodeBlock({
   disablePrefixes,
 }: RawCodeBlockProps) {
   const theme = React.useContext(ThemeContext);
-  const lang =
-    language === 'shell' ? 'bash' : language === 'text' ? 'diff' : language;
   return (
     <Highlight
       Prism={Prism}
       theme={codeTheme(theme)}
       code={code}
-      language={lang}
+      language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
@@ -32,7 +30,7 @@ function RawCodeBlock({
           }
           style={{ ...style }}
         >
-          {!disablePrefixes && tokens.length === 1 && lang === 'bash' && (
+          {!disablePrefixes && tokens.length === 1 && language === 'bash' && (
             <code className="pr-2 sm:pr-3">
               <div className="text-gray-400 token-line text-right select-none">
                 $
@@ -76,11 +74,13 @@ function CodeBlock({
   language,
   disablePrefixes,
 }: CodeBlockProps): JSX.Element {
+  const lang = language || 'bash';
+  const dp = disablePrefixes === true;
   return (
     <RawCodeBlock
       code={code}
-      language={language}
-      disablePrefixes={disablePrefixes}
+      language={lang}
+      disablePrefixes={dp}
       className="rounded border border-gray-200 p-1 px-2 sm:px-3"
     />
   );

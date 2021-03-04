@@ -1,3 +1,5 @@
+import { Language } from 'prism-react-renderer';
+
 export type Theme = 'light' | 'dark';
 
 export interface HeadingRendererProps {
@@ -22,13 +24,13 @@ export interface MarkDownProps {
 
 export interface CodeBlockProps {
   code: string;
-  language?: string;
+  language?: Language;
   disablePrefixes?: boolean;
 }
 
 export interface RawCodeBlockProps {
   code: string;
-  language: string;
+  language: Language;
   className: string;
   disablePrefixes: boolean;
 }
